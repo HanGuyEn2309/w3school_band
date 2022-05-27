@@ -187,15 +187,63 @@ button {
     padding: 0 24px;
 }
 
+.dots {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 12px;
+    justify-content: center;
+}
+
+.dot {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    margin: 0 4px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #bbb;
+    /* position: absolute; */
+}
+
+.dot:hover {
+    background-color: #717171;
+}
+
+.dot.active {
+    background-color: #717171;
+}
+
 /* Slider */
-#slider {
-    margin-top: 46.5px; /* gán slider bằng chiều cao header */
-    padding-top: 50%;   /* chiều cao bằng 1 nửa chiều dài*/
+/* #slider {
+    margin-top: 46.5px; 
+    gán slider bằng chiều cao header
+    padding-top: 50%;   
+    chiều cao bằng 1 nửa chiều dài
     background: url('../img/slider/slider3.jpg') top center / cover no-repeat;
+    position: relative;
+} */
+
+#sliders {
+    margin-top: 46.5px;
     position: relative;
 }
 
-#slider .text-content {
+.slider {
+    display: none;
+}
+
+.slider.active {
+    display: block;
+    position: relative;
+}
+
+.slider.active img {
+    width: 100%;
+    display: block;
+}
+
+.slider .text-content {
     color: #fff;
     bottom: 32px;
     /*căn giữa*/
@@ -210,14 +258,14 @@ button {
     position: absolute;
 }
 
-#slider .text-heading {
+.slider .text-heading {
     font-size: 24px;
     margin: 10px 0;
     font-weight: 400;   /* chiều dày chữ */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#slider .text-description {
+.slider .text-description {
     font-size: 15px;
     margin: 15px 0;
     font-weight: bolder;
@@ -467,13 +515,13 @@ button {
 }
 
 .map-section img {
+    display: block;
     width: 100%;
     filter: grayscale(50%);
 }
 
 /* Footer */
 #footer {
-    margin-top: -5px;
     padding: 64px 16px;
     background-color: #f1f1f1;
     color: #000;

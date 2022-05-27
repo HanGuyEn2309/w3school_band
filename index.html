@@ -55,10 +55,32 @@
         </div>
 
         <!-- Slider -->
-        <div id="slider">
-            <div class="text-content text-center">
-                <h3 class="text-heading">Los Angeles</h3>
-                <p class="text-description">We had the best time playing at Venice Beach!</p>
+        <div id="sliders">
+            <div class="slider active">
+                <img src="./assets/img/slider/slider3.jpg" alt="">
+                <div class="text-content text-center">
+                    <h3 class="text-heading">Los Angeles</h3>
+                    <p class="text-description">We had the best time playing at Venice Beach!</p>
+                </div>
+            </div>
+            <div class="slider">
+                <img src="./assets/img/slider/slider2.jpg" alt="">
+                <div class="text-content text-center">
+                    <h3 class="text-heading">New York</h3>
+                    <p class="text-description">The atmosphere in New York is lorem ipsum.</p>
+                </div>
+            </div>
+            <div class="slider">
+                <img src="./assets/img/slider/slider1.jpg" alt="">
+                <div class="text-content text-center">
+                    <h3 class="text-heading">Chicago</h3>
+                    <p class="text-description">Thank you, Chicago - A night we wont forget.</p>
+                </div>
+            </div>
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
             </div>
         </div>
 
@@ -287,5 +309,67 @@
         }
     </script>
 
+    <!-- Slider auto -->
+    <!-- <script>
+        const slider = document.querySelectorAll('#slider');
+        var currentIndex = 0;
+        function carousel() {
+            var i = 0;
+            for (; i < slider.length; i++) {
+                slider[i].style.display = 'none';
+            }
+            currentIndex++;
+            if (currentIndex > slider.length) {
+                currentIndex = 1;
+            }
+            slider[currentIndex - 1].style.display = 'block';
+            setTimeout(carousel, 4000);
+        }
+        carousel();
+    </script> -->
+
+    <script>
+        const $ = document.querySelector.bind(document)
+        const $$ = document.querySelectorAll.bind(document)
+
+        const dots = $$('.dot');
+        const sliders = $$('.slider');
+
+        const sliderActive = $('.slider.active');
+        const dotsActive = $('.slider.active');
+
+        var indexCurrent = 0;
+        var isPause = false;
+        dots.forEach((dot, index) => {
+            dot.onclick = function() {
+                active(index);
+                indexCurrent = index;
+            }
+        })
+
+        setInterval(function() {
+            if(!isPause) {
+                active(indexCurrent)
+                if(indexCurrent == dots.length - 1) {
+                    indexCurrent = 0;
+                } else {
+                    ++indexCurrent;
+                }
+            }
+        }, 4000)
+
+        $('.dots').onclick = function(){
+            isPause = true;
+        }
+
+        function active(index) {
+            var slider = sliders[index]
+            $('.dot.active').classList.remove('active');
+            $('.slider.active').classList.remove('active');
+
+            dots[index].classList.add('active');
+            slider.classList.add('active');
+        }
+    </script>
 </body>
 </html>
