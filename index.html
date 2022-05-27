@@ -335,8 +335,8 @@
         const dots = $$('.dot');
         const sliders = $$('.slider');
 
+        const dotActive = $('.dot.active');
         const sliderActive = $('.slider.active');
-        const dotsActive = $('.slider.active');
 
         var indexCurrent = 0;
         var isPause = false;
@@ -364,6 +364,8 @@
 
         function active(index) {
             var slider = sliders[index]
+            // dotActive.classList.remove('active');
+            // sliderActive.classList.remove('active');
             $('.dot.active').classList.remove('active');
             $('.slider.active').classList.remove('active');
 
