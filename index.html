@@ -358,9 +358,6 @@
             }
         }, 4000)
 
-        $('.dots').onclick = function(){
-            isPause = true;
-        }
 
         function active(index) {
             var slider = sliders[index]
@@ -372,6 +369,19 @@
             dots[index].classList.add('active');
             slider.classList.add('active');
         }
+
+        // Di chuột vào thì dừng
+        $('.dots').onmouseover = function(){
+        isPause = true
+        }
+        $('.dots').onmouseout = function(){
+        isPause = false
+        }
+
+        // Click chuột vào thì dừnggo
+        // $('.dots').onclick = function(){
+        //     isPause = true;
+        // }
     </script>
 </body>
 </html>
