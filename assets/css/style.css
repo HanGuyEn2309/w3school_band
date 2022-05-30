@@ -187,33 +187,6 @@ button {
     padding: 0 24px;
 }
 
-.dots {
-    width: 100%;
-    display: flex;
-    position: absolute;
-    bottom: 12px;
-    justify-content: center;
-}
-
-.dot {
-    display: inline-block;
-    height: 15px;
-    width: 15px;
-    margin: 0 4px;
-    border-radius: 50%;
-    cursor: pointer;
-    background-color: #bbb;
-    /* position: absolute; */
-}
-
-.dot:hover {
-    background-color: #717171;
-}
-
-.dot.active {
-    background-color: #717171;
-}
-
 /* Slider */
 /* #slider {
     margin-top: 46.5px; 
@@ -270,6 +243,33 @@ button {
     margin: 15px 0;
     font-weight: bolder;
     text-shadow: 0 0 1px #000;
+}
+
+.dots {
+    display: flex;
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dot {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    margin: 0 4px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #bbb;
+    /* position: absolute; */
+}
+
+.dot:hover {
+    background-color: #717171;
+}
+
+.dot.active {
+    background-color: #717171;
 }
 
 /* Content */

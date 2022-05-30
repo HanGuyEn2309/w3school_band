@@ -338,8 +338,21 @@
         const dotActive = $('.dot.active');
         const sliderActive = $('.slider.active');
 
+        // dots.forEach((dot, index) => {
+        //     var slider = sliders[index];
+            
+        //     dot.onclick = function() {
+        //     $('.dot.active').classList.remove('active');
+        //     $('.slider.active').classList.remove('active');
+            
+        //     dots[index].classList.add('active');
+        //     slider.classList.add('active');
+        //     }
+        // })
+
         var indexCurrent = 0;
         var isPause = false;
+
         dots.forEach((dot, index) => {
             dot.onclick = function() {
                 active(index);
@@ -349,7 +362,7 @@
 
         setInterval(function() {
             if(!isPause) {
-                active(indexCurrent)
+                active(indexCurrent);
                 if(indexCurrent == dots.length - 1) {
                     indexCurrent = 0;
                 } else {
@@ -357,7 +370,6 @@
                 }
             }
         }, 4000)
-
 
         function active(index) {
             var slider = sliders[index]
@@ -370,16 +382,16 @@
             slider.classList.add('active');
         }
 
-        // Di chuột vào thì dừng
-        $('.dots').onmouseover = function(){
-        isPause = true
+        // Di chuột vào thì dừng slider
+        $('.dots').onmouseover = function() {
+            isPause = true;
         }
-        $('.dots').onmouseout = function(){
-        isPause = false
+        $('.dots').onmouseout = function() {
+            isPause = false;
         }
 
-        // Click chuột vào thì dừnggo
-        // $('.dots').onclick = function(){
+        // Click chuột vào thì dừng slider
+        // $('.dots').onclick = function() {
         //     isPause = true;
         // }
     </script>
